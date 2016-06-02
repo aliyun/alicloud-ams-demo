@@ -52,7 +52,7 @@ namespace AlibabaCloud
             request.AndroidExtParameters = "{\"k1\":\"android\",\"k2\":\"v2\"}";
 
             // 推送控制
-            request.StoreOffline = true;
+            //request.StoreOffline = true;
            
             
             try
