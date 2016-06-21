@@ -42,7 +42,7 @@ namespace AlibabaCloud
             request.IOSExtParameters = "{\"key1\":\"value1\"}";
             request.ApnsEnv = "DEV";
             // 当APP不在线时候，是否通过通知提醒
-            //request.Remind = true;
+            request.Remind = false;
             // 推送配置: Android
             // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url
             request.AndroidOpenType = "3";
@@ -52,7 +52,7 @@ namespace AlibabaCloud
             request.AndroidExtParameters = "{\"k1\":\"android\",\"k2\":\"v2\"}";
 
             // 推送控制
-            //request.StoreOffline = true;
+            request.StoreOffline = false;
            
             
             try
