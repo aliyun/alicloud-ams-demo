@@ -42,7 +42,7 @@ $request->setiOSBadge("5"); // iOS应用图标右上角角标
 $request->setiOSMusic("default"); // iOS通知声音
 $request->setiOSExtParameters("{\"k1\":\"ios\",\"k2\":\"v2\"}"); //自定义的kv结构,开发者扩展用 针对iOS设备
 $request->setApnsEnv("DEV");
-//$request->setRemind("true"); // 当APP不在线时候，是否通过通知提醒
+$request->setRemind("false"); // 当APP不在线时候，是否通过通知提醒
 // 推送配置: Android
 $request->setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url
 $request->setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
@@ -51,7 +51,7 @@ $request->setAndroidExtParameters("{\"k1\":\"android\",\"k2\":\"v2\"}"); // 设�
 //$pushTime = new DateTime();
 //$pushTime->add(new DateInterval('PT30S')); // 30秒之后的时间点, 也可以设置成你指定固定时间
 //$request->setPushTime($pushTime->format('Y-m-d\TH:i:s\Z')); // 延后推送。可选，如果不设置表示立即推送
-//$request->setStoreOffline("true"); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
+$request->setStoreOffline("false"); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
 //$expireTime = new DateTime();
 //$expireTime->add(new DateInterval('P1D')); // 12小时后消息失效, 不会再发送
 //$request->setExpireTime($expireTime->format('Y-m-d\TH:i:s\Z'));
