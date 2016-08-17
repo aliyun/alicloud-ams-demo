@@ -42,7 +42,7 @@ public class AdvancedPushDemoTest extends BaseTest {
         pushRequest.setApnsEnv("DEV");
         //pushRequest.setRemind(false); // 当APP不在线时候，是否通过通知提醒
         // 推送配置: Android
-        //小米弹窗: (小米)手机应用不在线时收到通知后弹窗提醒,这里要设置为自己应用的路径名(storeOffLine设为true时起作用)
+        //小米辅助弹窗: 小米手机App进程被清理后可以收到通知弹窗,此处必须指定通知点击后跳转的Activity (storeOffLine设为true时起作用)
         //pushRequest.setXiaomiActivity("com.alibaba.push.XiaoMiPushActivity");
 	pushRequest.setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url
         pushRequest.setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
@@ -88,7 +88,7 @@ public class AdvancedPushDemoTest extends BaseTest {
         pushRequest.setApnsEnv("DEV");
         //pushRequest.setRemind(true); // 当APP不在线时候，是否通过通知提醒
         // 推送配置: Android
-        //小米弹窗: (小米)手机应用不在线时收到通知后弹窗提醒,这里要设置为自己应用的路径名(storeOffLine设为true时起作用)
+        //小米辅助弹窗: 小米手机App进程被清理后可以收到通知弹窗, 此处必须指定通知点击后跳转的Activity (storeOffLine设为true时起作用)
         //pushRequest.setXiaomiActivity("com.alibaba.push.XiaoMiPushActivity");
 	pushRequest.setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url
         pushRequest.setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
@@ -142,7 +142,7 @@ public class AdvancedPushDemoTest extends BaseTest {
         pushRequest.setBody("PushRequest body"); // 消息的内容
         pushRequest.setSummary("PushRequest summary "); // 通知的摘要
         // 推送配置: iOS
-        //小米弹窗: (小米)手机应用不在线时收到通知后弹窗提醒,这里要设置为自己应用的路径名(storeOffLine设为true时起作用)
+        //小米辅助弹窗: 小米手机App进程被清理后可以收到通知弹窗, 此处必须指定通知点击后跳转的Activity (storeOffLine设为true时起作用)
         //pushRequest.setXiaomiActivity("com.alibaba.push.XiaoMiPushActivity");
 	pushRequest.setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url
         pushRequest.setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
