@@ -16,8 +16,8 @@ request.set_Title("Hello Open Api!")
 request.set_Body("Body from ali push open api:Push")
 request.set_Summary("Summary from ali push open api:Push")
 request.set_DeviceType(1)
-//request.set_Remind(False)
-//request.set_StoreOffline(False)
+#request.set_Remind(False)
+#request.set_StoreOffline(False)
 
 
 
