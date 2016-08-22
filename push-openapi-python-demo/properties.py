@@ -1,8 +1,8 @@
 #!/usr/bin/python
 #coding=utf-8
 
-accessKeyId='_YOUR_ACCESS_KEY_ID_HERE_'
-accessKeySecret ='_YOUR_ACCESS_KEY_SECRET_HERE_'
+accessKeyId = '_YOUR_ACCESS_KEY_ID_HERE_'
+accessKeySecret = '_YOUR_ACCESS_KEY_SECRET_HERE_'
 
 appKey = '_YOUR_APP_KEY_HERE_'
 

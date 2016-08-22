@@ -42,9 +42,9 @@ public class AdvancedPushDemoTest extends BaseTest {
         pushRequest.setApnsEnv("DEV");
         //pushRequest.setRemind(false); // 当APP不在线时候，是否通过通知提醒
         // 推送配置: Android
-        //小米辅助弹窗: 小米手机App进程被清理后可以收到通知弹窗,此处必须指定通知点击后跳转的Activity (storeOffLine设为true时起作用)
-        pushRequest.setXiaomiActivity("_Your_XiaoMi_Activity_");
-	    pushRequest.setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 : 无跳转逻辑
+        //设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffLine设为true
+        //pushRequest.setXiaomiActivity("_Your_XiaoMi_Activity_");
+        pushRequest.setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 : 无跳转逻辑
         pushRequest.setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
         pushRequest.setAndroidExtParameters("{\"k1\":\"android\",\"k2\":\"v2\"}"); // 设定android类型设备通知的扩展属性
 
@@ -56,7 +56,7 @@ public class AdvancedPushDemoTest extends BaseTest {
         //pushRequest.setStoreOffline(false); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
         //final String expireTime = ParameterHelper.getISO8601Time(new Date(System.currentTimeMillis() + 12 * 3600 * 1000)); // 12小时后消息失效, 不会再发送
         //pushRequest.setExpireTime(expireTime);
-        pushRequest.setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
+        //pushRequest.setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
 
         PushResponse pushResponse = client.getAcsResponse(pushRequest);
         System.out.printf("RequestId: %s, ResponseId: %s, message: %s\n",
@@ -86,11 +86,11 @@ public class AdvancedPushDemoTest extends BaseTest {
         pushRequest.setiOSMusic("default"); // iOS通知声音
         pushRequest.setiOSExtParameters("{\"k1\":\"ios\",\"k2\":\"v2\"}"); //自定义的kv结构,开发者扩展用 针对iOS设备
         pushRequest.setApnsEnv("DEV");
-        //pushRequest.setRemind(true); // 当APP不在线时候，是否通过通知提醒
+        //pushRequest.setRemind(true); // 推送时设备不在线（既与移动推送的服务端的长连接通道不通），则这条推送会做为通知，通过苹果的APNs通道送达一次(发送通知时,Summary为通知的内容,Message不起作用)。注意：离线消息转通知仅适用于生产环境
         // 推送配置: Android
-        //小米辅助弹窗: 小米手机App进程被清理后可以收到通知弹窗,此处必须指定通知点击后跳转的Activity (storeOffLine设为true时起作用)
-        pushRequest.setXiaomiActivity("_Your_XiaoMi_Activity_");
-	    pushRequest.setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 : 无跳转逻辑
+        //设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffLine设为true
+        //pushRequest.setXiaomiActivity("_Your_XiaoMi_Activity_");
+        pushRequest.setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 : 无跳转逻辑
         pushRequest.setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
         pushRequest.setAndroidExtParameters("{\"k1\":\"android\",\"k2\":\"v2\"}"); // 设定android类型设备通知的扩展属性
 
@@ -133,7 +133,7 @@ public class AdvancedPushDemoTest extends BaseTest {
 
         //pushRequest.setStoreOffline(false); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
         //pushRequest.setTimeOut(24); // 离线消息保存时长,取值范围为1~72, 若不填,则表示不保存离线消息
-        pushRequest.setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
+        //pushRequest.setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
 
 
         // 推送配置
@@ -142,9 +142,9 @@ public class AdvancedPushDemoTest extends BaseTest {
         pushRequest.setBody("PushRequest body"); // 消息的内容
         pushRequest.setSummary("PushRequest summary "); // 通知的摘要
         // 推送配置: iOS
-        //小米辅助弹窗: 小米手机App进程被清理后可以收到通知弹窗,此处必须指定通知点击后跳转的Activity (storeOffLine设为true时起作用)
-        pushRequest.setXiaomiActivity("_Your_XiaoMi_Activity_");
-	    pushRequest.setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 : 无跳转逻辑
+        //设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffLine设为true)
+        //pushRequest.setXiaomiActivity("_Your_XiaoMi_Activity_");
+        pushRequest.setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 : 无跳转逻辑
         pushRequest.setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
         pushRequest.setAndroidExtParameters("{\"k1\":\"android\",\"k2\":\"v2\"}"); // 设定android类型设备通知的扩展属性
         // 推送配置: Android
