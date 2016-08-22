@@ -42,10 +42,11 @@ $request->setiOSBadge("5"); // iOS应用图标右上角角标
 $request->setiOSMusic("default"); // iOS通知声音
 $request->setiOSExtParameters("{\"k1\":\"ios\",\"k2\":\"v2\"}"); //自定义的kv结构,开发者扩展用 针对iOS设备
 $request->setApnsEnv("DEV");
-//$request->setRemind("false"); // 当APP不在线时候，是否通过通知提醒
+//$request->setRemind("false"); // 推送时设备不在线（既与移动推送的服务端的长连接通道不通），则这条推送会做为通知，通过苹果的APNs通道送达一次(发送通知时,Summary为通知的内容,Message不起作用)。注意：离线消息转通知仅适用于生产环境
 // 推送配置: Android
-$request->setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url
+$request->setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 : 无跳转逻辑
 $request->setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
+//$request->setsetXiaomiActivity("_Your_XiaoMi_Activity_");//设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffLine设为true)
 $request->setAndroidExtParameters("{\"k1\":\"android\",\"k2\":\"v2\"}"); // 设定android类型设备通知的扩展属性
 // 推送控制
 //$pushTime = new DateTime();
@@ -55,7 +56,7 @@ $request->setAndroidExtParameters("{\"k1\":\"android\",\"k2\":\"v2\"}"); // 设�
 //$expireTime = new DateTime();
 //$expireTime->add(new DateInterval('P1D')); // 12小时后消息失效, 不会再发送
 //$request->setExpireTime($expireTime->format('Y-m-d\TH:i:s\Z'));
-$request->setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
+//$request->setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
 $response = $client->getAcsResponse($request);
 print_r("\r\n");
 print_r($response);

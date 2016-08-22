@@ -41,13 +41,15 @@ namespace AlibabaCloud
             //自定义的kv结构,开发者扩展用 针对iOS设备
             request.IOSExtParameters = "{\"key1\":\"value1\"}";
             request.ApnsEnv = "DEV";
-            // 当APP不在线时候，是否通过通知提醒,仅对iOS消息使用
+            // 推送时设备不在线（既与移动推送的服务端的长连接通道不通），则这条推送会做为通知，通过苹果的APNs通道送达一次(发送通知时,Summary为通知的内容,Message不起作用)。注意：离线消息转通知仅适用于生产环境
             // request.Remind = false;
             // 推送配置: Android
-            // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url
+            // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 :无跳转逻辑
             request.AndroidOpenType = "3";
             // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
             request.AndroidOpenUrl = "http://www.baidu.com";
+            //设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffLine设为true)
+            //request.XiaomiActivity = "_Your_XiaoMi_Activity_";
             // 设定android类型设备通知的扩展属性
             request.AndroidExtParameters = "{\"k1\":\"android\",\"k2\":\"v2\"}";
 

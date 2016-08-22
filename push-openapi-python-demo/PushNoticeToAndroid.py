@@ -4,7 +4,7 @@ import properties
 from aliyunsdkpush.request.v20150827 import PushNoticeToAndroidRequest
 from aliyunsdkcore import client
 
-t = client.AcsClient(properties.accessKeyId,properties.accessKeySecret,properties.regionId)
+clt = client.AcsClient(properties.accessKeyId,properties.accessKeySecret,properties.regionId)
 
 request = PushNoticeToAndroidRequest.PushNoticeToAndroidRequest()
 request.set_AppKey(properties.appKey)
