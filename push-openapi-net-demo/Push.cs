@@ -44,10 +44,12 @@ namespace AlibabaCloud
             // 当APP不在线时候，是否通过通知提醒,仅对iOS消息使用
             // request.Remind = false;
             // 推送配置: Android
-            // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url
+            // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 :无跳转逻辑
             request.AndroidOpenType = "3";
             // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
             request.AndroidOpenUrl = "http://www.baidu.com";
+            //小米辅助弹窗: 小米手机App进程被清理后可以收到通知弹窗,此处必须指定通知点击后跳转的Activity (storeOffLine设为true时起作用)
+            request.XiaomiActivity = "_Your_XiaoMi_Activity_";
             // 设定android类型设备通知的扩展属性
             request.AndroidExtParameters = "{\"k1\":\"android\",\"k2\":\"v2\"}";
 

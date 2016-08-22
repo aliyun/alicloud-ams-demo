@@ -44,8 +44,9 @@ $request->setiOSExtParameters("{\"k1\":\"ios\",\"k2\":\"v2\"}"); //自定义的k
 $request->setApnsEnv("DEV");
 //$request->setRemind("false"); // 当APP不在线时候，是否通过通知提醒
 // 推送配置: Android
-$request->setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url
+$request->setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 : 无跳转逻辑
 $request->setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
+$request->setsetXiaomiActivity("_Your_XiaoMi_Activity_");//小米手机App进程被清理后可以收到通知弹窗,此处必须指定通知点击后跳转的Activity (storeOffLine设为true时起作用)
 $request->setAndroidExtParameters("{\"k1\":\"android\",\"k2\":\"v2\"}"); // 设定android类型设备通知的扩展属性
 // 推送控制
 //$pushTime = new DateTime();
