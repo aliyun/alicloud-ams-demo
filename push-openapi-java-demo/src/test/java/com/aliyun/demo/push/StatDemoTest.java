@@ -38,7 +38,7 @@ public class StatDemoTest extends BaseTest {
             request.setGranularity("DAY");
 
             final Date startDate = new Date(System.currentTimeMillis() - 3 * 24 * 3600 * 1000);
-            final String startTime = ParameterHelper.getISO8601Time(pushDate);
+            final String startTime = ParameterHelper.getISO8601Time(startDate);
             final Date endDate = new Date(System.currentTimeMillis());
             final String endTime = ParameterHelper.getISO8601Time(endDate);
 
@@ -65,7 +65,7 @@ public class StatDemoTest extends BaseTest {
             request.setDeviceType("All");
 
             final Date startDate = new Date(System.currentTimeMillis() - 7 * 24 * 3600 * 1000);
-            final String startTime = ParameterHelper.getISO8601Time(pushDate);
+            final String startTime = ParameterHelper.getISO8601Time(startDate);
             final Date endDate = new Date(System.currentTimeMillis());
             final String endTime = ParameterHelper.getISO8601Time(endDate);
 
@@ -91,7 +91,7 @@ public class StatDemoTest extends BaseTest {
 
 
             final Date startDate = new Date(System.currentTimeMillis() - 24 * 3600 * 1000);
-            final String startTime = ParameterHelper.getISO8601Time(pushDate);
+            final String startTime = ParameterHelper.getISO8601Time(startDate);
             final Date endDate = new Date(System.currentTimeMillis());
             final String endTime = ParameterHelper.getISO8601Time(endDate);
 
