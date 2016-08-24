@@ -1,6 +1,8 @@
+# 用于鉴权的AK 阿里云官方控制台获取
 accessKeyId= _YOUR_ACCESS_KEY_ID_HERE_
 accessKeySecret = _YOUR_ACCESS_KEY_SECRET_HERE_
 
+# 移动推送控制台APP列表点击应用证书获取
 appKey = _YOUR_APP_KEY_HERE_
 
 
@@ -9,3 +11,6 @@ deviceIds = _YOUR_DEVICES_ID_LIST_HERE_
 
 # 发送的accounts 列表, 逗号分隔 比如:  account1 或是  account1,account2
 accounts = _YOUR_ACCOUNT_LIST_HERE_
+
+# 发送的tag表达式   具体可参考文档 : https://help.aliyun.com/document_detail/30095.html
+tagExpression = _YOUR_TAG_EXPRESSION_HERE_

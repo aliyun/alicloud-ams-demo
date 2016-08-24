@@ -17,9 +17,11 @@ public class TagDemoTest extends BaseTest {
         request.setAppKey(appKey);
 
         ListTagsResponse response = client.getAcsResponse(request);
+        System.out.printf("RequestId : %s\n" , response.getRequestId());
+
         List<ListTagsResponse.TagInfo> tagInfos = response.getTagInfos();
         for (ListTagsResponse.TagInfo tagInfo : tagInfos) {
-            System.out.printf("tagName: %s \n", tagInfo.getTagName());
+            System.out.printf("tagName : %s\n", tagInfo.getTagName());
         }
 
     }
@@ -29,12 +31,16 @@ public class TagDemoTest extends BaseTest {
 
         QueryTagsRequest request = new QueryTagsRequest();
         request.setAppKey(appKey);
-        request.setClientKey("yourDeviceId");
+        request.setClientKey(deviceIds);
         request.setKeyType(1);//1 : device 2 : account
 
         QueryTagsResponse response = client.getAcsResponse(request);
-        System.out.printf("RequestId: %s, tags: %s\n",
-                response.getRequestId(), response.getTagInfos());
+        System.out.printf("RequestId : %s\n " , response.getRequestId());
+
+        List<QueryTagsResponse.TagInfo> tagInfos = response.getTagInfos();
+        for (QueryTagsResponse.TagInfo tagInfo : tagInfos) {
+            System.out.printf("tagName : %s\n", tagInfo.getTagName());
+        }
 
     }
 
@@ -43,13 +49,12 @@ public class TagDemoTest extends BaseTest {
 
         BindTagRequest request = new BindTagRequest();
         request.setAppKey(appKey);
-        request.setClientKey("yourDeviceId");
+        request.setClientKey(deviceIds);
         request.setKeyType(1);//1 : device 2 : account
         request.setTagName("tag1");
 
         BindTagResponse response = client.getAcsResponse(request);
-        System.out.printf("RequestId: %s\n",
-                response.getRequestId());
+        System.out.printf("RequestId : %s\n " , response.getRequestId());
 
     }
 
@@ -58,13 +63,12 @@ public class TagDemoTest extends BaseTest {
 
         UnbindTagRequest request = new UnbindTagRequest();
         request.setAppKey(appKey);
-        request.setClientKey("yourDeviceId");
+        request.setClientKey(deviceIds);
         request.setKeyType(1);//1 : device 2 : account
         request.setTagName("tag1");
 
         UnbindTagResponse response = client.getAcsResponse(request);
-        System.out.printf("RequestId: %s\n",
-                response.getRequestId());
+        System.out.printf("RequestId : %s\n " , response.getRequestId());
 
     }
 

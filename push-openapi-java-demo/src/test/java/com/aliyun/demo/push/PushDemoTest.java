@@ -28,8 +28,8 @@ public class PushDemoTest extends BaseTest {
         androidRequest.setAndroidExtParameters("{\"key1\":\"value1\",\"api_name\":\"PushNoticeToAndroidRequest\"}");
 
         PushNoticeToAndroidResponse pushNoticeToAndroidResponse = client.getAcsResponse(androidRequest);
-        System.out.printf("RequestId: %s, ResponseId: %s, message: %s\n",
-                pushNoticeToAndroidResponse.getRequestId(), pushNoticeToAndroidResponse.getResponseId(), pushNoticeToAndroidResponse.getMessage());
+        System.out.printf("RequestId: %s, ResponseId: %s\n",
+                pushNoticeToAndroidResponse.getRequestId(), pushNoticeToAndroidResponse.getResponseId());
     }
 
     /**
@@ -51,8 +51,8 @@ public class PushDemoTest extends BaseTest {
         androidRequest.setSummary("你好, PushNoticeToAndroid from OpenAPI!");
 
         PushNoticeToAndroidResponse pushNoticeToAndroidResponse = client.getAcsResponse(androidRequest);
-        System.out.printf("RequestId: %s, ResponseId: %s, message: %s\n",
-                pushNoticeToAndroidResponse.getRequestId(), pushNoticeToAndroidResponse.getResponseId(), pushNoticeToAndroidResponse.getMessage());
+        System.out.printf("RequestId: %s, ResponseId: %s\n",
+                pushNoticeToAndroidResponse.getRequestId(), pushNoticeToAndroidResponse.getResponseId());
     }
 
     /**
@@ -74,8 +74,8 @@ public class PushDemoTest extends BaseTest {
         androidRequest.setSummary("你好, PushNoticeToAndroid from OpenAPI!");
 
         PushNoticeToAndroidResponse pushNoticeToAndroidResponse = client.getAcsResponse(androidRequest);
-        System.out.printf("RequestId: %s, ResponseId: %s, message: %s\n",
-                pushNoticeToAndroidResponse.getRequestId(), pushNoticeToAndroidResponse.getResponseId(), pushNoticeToAndroidResponse.getMessage());
+        System.out.printf("RequestId: %s, ResponseId: %s\n",
+                pushNoticeToAndroidResponse.getRequestId(), pushNoticeToAndroidResponse.getResponseId());
     }
 
     /**
@@ -92,8 +92,8 @@ public class PushDemoTest extends BaseTest {
         androidRequest.setMessage("PushMessageToAndroid from OpenAPI!");
 
         PushMessageToAndroidResponse pushMessageToAndroidResponse = client.getAcsResponse(androidRequest);
-        System.out.printf("RequestId: %s, ResponseId: %s, message: %s\n",
-                pushMessageToAndroidResponse.getRequestId(), pushMessageToAndroidResponse.getResponseId(), pushMessageToAndroidResponse.getMessage());
+        System.out.printf("RequestId: %s, ResponseId: %s\n",
+                pushMessageToAndroidResponse.getRequestId(), pushMessageToAndroidResponse.getResponseId());
     }
 
     /**
@@ -116,8 +116,8 @@ public class PushDemoTest extends BaseTest {
         iOSRequest.setExt("{\"sound\":\"default\", \"badge\":\"42\"}");
 
         PushNoticeToiOSResponse pushNoticeToiOSResponse = client.getAcsResponse(iOSRequest);
-        System.out.printf("RequestId: %s, ResponseId: %s, message: %s\n",
-                pushNoticeToiOSResponse.getRequestId(), pushNoticeToiOSResponse.getResponseId(), pushNoticeToiOSResponse.getMessage());
+        System.out.printf("RequestId: %s, ResponseId: %s\n",
+                pushNoticeToiOSResponse.getRequestId(), pushNoticeToiOSResponse.getResponseId());
     }
 
     /**
@@ -135,7 +135,7 @@ public class PushDemoTest extends BaseTest {
         iOSRequest.setSummary("summary");
 
         PushMessageToiOSResponse pushMessageToiOSResponse = client.getAcsResponse(iOSRequest);
-        System.out.printf("RequestId: %s, ResponseId: %s, message: %s\n",
-                pushMessageToiOSResponse.getRequestId(), pushMessageToiOSResponse.getResponseId(), pushMessageToiOSResponse.getMessage());
+        System.out.printf("RequestId: %s, ResponseId: %s\n",
+                pushMessageToiOSResponse.getRequestId(), pushMessageToiOSResponse.getResponseId());
     }
 }
