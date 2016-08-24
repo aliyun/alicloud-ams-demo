@@ -19,11 +19,11 @@
             <artifactId>aliyun-java-sdk-push</artifactId>
             <version>2.2.1</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.aliyun</groupId>-->
-            <!--<artifactId>aliyun-java-sdk-core</artifactId>-->
-            <!--<version>2.4.2</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>2.4.2</version>
+        </dependency>
         <!-- Testing libs -->
         <dependency>
             <groupId>junit</groupId>

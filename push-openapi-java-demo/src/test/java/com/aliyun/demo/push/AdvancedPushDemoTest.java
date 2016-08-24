@@ -59,8 +59,8 @@ public class AdvancedPushDemoTest extends BaseTest {
         //pushRequest.setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
 
         PushResponse pushResponse = client.getAcsResponse(pushRequest);
-        System.out.printf("RequestId: %s, ResponseId: %s, MessageId: %s\n",
-                pushResponse.getRequestId(), pushResponse.getResponseId(), pushResponse.getResponseId());
+        System.out.printf("RequestId: %s, ResponseId: %s\n",
+                pushResponse.getRequestId(), pushResponse.getResponseId());
     }
 
     @Test
@@ -105,8 +105,8 @@ public class AdvancedPushDemoTest extends BaseTest {
         //pushRequest.setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
 
         PushResponse pushResponse = client.getAcsResponse(pushRequest);
-        System.out.printf("RequestId: %s, ResponseId: %s, MessageId: %s\n",
-                pushResponse.getRequestId(), pushResponse.getResponseId(), pushResponse.getResponseId());
+        System.out.printf("RequestId: %s, ResponseId: %s\n",
+                pushResponse.getRequestId(), pushResponse.getResponseId());
     }
 
     /**
@@ -155,7 +155,7 @@ public class AdvancedPushDemoTest extends BaseTest {
         //pushRequest.setRemind(false); // 当APP不在线时候，是否通过通知提醒
 
         PushResponse pushResponse = client.getAcsResponse(pushRequest);
-        System.out.printf("RequestId: %s, ResponseId: %s, MessageId: %s\n",
-                pushResponse.getRequestId(), pushResponse.getResponseId(), pushResponse.getResponseId());
+        System.out.printf("RequestId: %s, ResponseId: %s\n",
+                pushResponse.getRequestId(), pushResponse.getResponseId());
     }
 }

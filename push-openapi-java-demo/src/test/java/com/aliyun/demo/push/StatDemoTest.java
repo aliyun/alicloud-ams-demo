@@ -18,7 +18,7 @@ public class StatDemoTest extends BaseTest {
         public void testQueryPushStat() throws Exception {
             QueryPushStatRequest request = new QueryPushStatRequest();
             request.setAppKey(appKey);
-            request.setMessageId("_MessageId_");
+            request.setMessageId("_MessageId_");//此处填写推送成功后返回的ResponseId
 
             QueryPushStatResponse response = client.getAcsResponse(request);
             System.out.printf("RequestId: %s\n" , response.getRequestId());
