@@ -18,12 +18,14 @@ public class StatDemoTest extends BaseTest {
         public void testQueryPushStat() throws Exception {
             QueryPushStatRequest request = new QueryPushStatRequest();
             request.setAppKey(appKey);
-            request.setMessageId("500345");
+            request.setMessageId("_MessageId_");
 
             QueryPushStatResponse response = client.getAcsResponse(request);
+            System.out.printf("RequestId: %s\n" , response.getRequestId());
+
             for (QueryPushStatResponse.PushStat item : response.getPushStats()) {
-                System.out.printf("RequestId: %s, ReceivedCount: %s, SentCount: %s, MessageId: %s \n",
-                        response.getRequestId(), item.getReceivedCount(), item.getSentCount(), item.getMessageId());
+                System.out.printf("MessageId: %s , ReceivedCount: %s, SentCount: %s\n",
+                        item.getMessageId(), item.getReceivedCount(), item.getSentCount());
             }
         }
 
@@ -47,10 +49,11 @@ public class StatDemoTest extends BaseTest {
             request.setEndTime(endTime);
 
             QueryAppPushStatResponse response = client.getAcsResponse(request);
+            System.out.printf("RequestId: %s\n",response.getRequestId());
 
             for (QueryAppPushStatResponse.AppPushStat stat : response.getAppPushStats()) {
-                System.out.printf("RequestId: %s, time: %s, ReceivedCount: %s, SentCount: %s \n",
-                        response.getRequestId(), stat.getTime(), stat.getReceivedCount(), stat.getSentCount());
+                System.out.printf("Time: %s, ReceivedCount: %s, SentCount: %s \n",
+                        stat.getTime(), stat.getReceivedCount(), stat.getSentCount());
             }
         }
 
@@ -74,9 +77,11 @@ public class StatDemoTest extends BaseTest {
             request.setEndTime(endTime);
 
             QueryDeviceStatResponse response = client.getAcsResponse(request);
+            System.out.printf("RequestId: %s\n",response.getRequestId());
+
             for (QueryDeviceStatResponse.AppDeviceStat stat : response.getAppDeviceStats()) {
-                System.out.printf("RequestId: %s, DeviceType: %s, time: %s, count: %s \n",
-                        response.getRequestId(), stat.getDeviceType(), stat.getTime(), stat.getCount());
+                System.out.printf("Time: %s, DeviceType: %s, Count: %s\n",
+                        stat.getTime(), stat.getDeviceType(), stat.getCount());
             }
         }
 
@@ -100,10 +105,11 @@ public class StatDemoTest extends BaseTest {
             request.setEndTime(endTime);
 
             QueryUniqueDeviceStatResponse response = client.getAcsResponse(request);
+            System.out.printf("RequestId: %s\n",response.getRequestId());
 
             for (QueryUniqueDeviceStatResponse.AppDeviceStat stat : response.getAppDeviceStats()) {
-                System.out.printf("RequestId: %s, count: %s, time: %s \n",
-                        response.getRequestId(), stat.getCount(), stat.getTime());
+                System.out.printf("Time: %s, Count: %s\n",
+                        stat.getTime(), stat.getCount());
             }
         }
 

@@ -19,6 +19,7 @@ public class BaseTest {
     protected static long appKey;
     protected static String deviceIds;
     protected static String accounts;
+    protected static String tagExpression;
 
     protected static DefaultAcsClient client;
 
@@ -46,6 +47,7 @@ public class BaseTest {
 
         deviceIds = properties.getProperty("deviceIds");
         accounts = properties.getProperty("accounts");
+        tagExpression = properties.getProperty("tagExpression");
 
         IClientProfile profile = DefaultProfile.getProfile(REGION_HANGZHOU, accessKeyId, accessKeySecret);
         client = new DefaultAcsClient(profile);
