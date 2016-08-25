@@ -14,4 +14,5 @@ request.set_Title("Hello OpenAPI!")
 request.set_Summary("你好, PushNoticeToAndroid from OpenAPI:PushNoticeToAndroid!")
 request.set_AndroidExtParameters("{\"id\":1001,\"content\":\"Hello OpenAPI!\"}")
 result = clt.do_action(request)
+
 print result
