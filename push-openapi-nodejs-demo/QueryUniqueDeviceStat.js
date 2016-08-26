@@ -1,4 +1,5 @@
-var ALY = require('./index.js');
+var ALY = require('aliyun-sdk');
+
 var push = new ALY.PUSH({
       accessKeyId: '<your access key id>',
       secretAccessKey: '<your access key secret>',
@@ -6,10 +7,17 @@ var push = new ALY.PUSH({
       apiVersion: '2015-08-27'
     }
 );
-push.QueryUniqueDeviceStat({
+
+//查询近七天的统计数据
+startTimestamp= new Date().getTime() - 7 * 24 * 3600 * 1000;
+endTimestamp = new Date();
+startTime = new Date(startTimestamp).toISOString().replace(/\.\d\d\d/g,'');
+endTime = new Date(endTimestamp).toISOString().replace(/\.\d\d\d/g,'');
+
+push.queryUniqueDeviceStat({
     AppKey: '<your Appkey>',
-    StartTime:'',
-    EndTime:''
+    StartTime: startTime,
+    EndTime: endTime
   }, function (err, res) {
     console.log(err, res);
   });

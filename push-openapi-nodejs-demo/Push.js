@@ -1,4 +1,5 @@
-var ALY = require('./index.js');
+var ALY = require('aliyun-sdk');
+
 var push = new ALY.PUSH({
       accessKeyId: '<your access key id>',
       secretAccessKey: '<your access key secret>',
@@ -6,6 +7,7 @@ var push = new ALY.PUSH({
       apiVersion: '2015-08-27'
     }
 );
+
 // 推送消息到 iOS
 push.push({
   AppKey: '<your AppKey>',
@@ -31,4 +33,5 @@ push.push({
 }, function (err, res) {
   console.log(err, res);
 });
+
 return;
