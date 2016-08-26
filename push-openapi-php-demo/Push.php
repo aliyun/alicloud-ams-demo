@@ -39,7 +39,7 @@ $request->setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后�
 $request->setAndroidExtParameters("{\"k1\":\"android\",\"k2\":\"v2\"}"); // 设定android类型设备通知的扩展属性
 
 // 推送控制
-$pushTime = gmdate('Y-m-d\TH:i:s\Z', strtotime('+3 second'));//延迟10秒发送
+$pushTime = gmdate('Y-m-d\TH:i:s\Z', strtotime('+3 second'));//延迟3秒发送
 $request->setPushTime($pushTime);
 $expireTime = gmdate('Y-m-d\TH:i:s\Z', strtotime('+1 day'));//设置失效时间为1天
 $request->setExpireTime($expireTime);
