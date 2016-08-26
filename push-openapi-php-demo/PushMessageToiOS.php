@@ -1,7 +1,7 @@
 <?php
 
 include_once '../aliyun-php-sdk-core/Config.php';
-use \PushMessageToiOS\Request\V20150827 as PushMessageToiOS;
+use \Push\Request\V20150827 as Push;
 
 // 设置你的AccessKeyId/AccessSecret/AppKey
 $accessKeyId = "";
@@ -9,7 +9,7 @@ $accessSecret = "";
 $appKey = 123456;
 $iClientProfile = DefaultProfile::getProfile("cn-hangzhou", $accessKeyId, $accessSecret);
 $client = new DefaultAcsClient($iClientProfile);
-$request = new PushMessageToiOS\PushMessageToiOSRequest();
+$request = new Push\PushMessageToiOSRequest();
 
 $request->setAppKey($appKey);
 $request->setTarget("all"); //推送目标: device:推送给设备; account:推送给指定帐号,tag:推送给自定义标签; all: 推送给全部

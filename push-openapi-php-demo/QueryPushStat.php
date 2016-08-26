@@ -1,7 +1,7 @@
 <?php
 
 include_once '../aliyun-php-sdk-core/Config.php';
-use \QueryPushStat\Request\V20150827 as QueryPushStat;
+use \Push\Request\V20150827 as Push;
 
 $accessKeyId = "";
 $accessSecret = "";
@@ -13,7 +13,7 @@ $request = new QueryPushStat\QueryPushStatRequest();
 $request->setAppKey($appKey);
 $request->setMessageId('500345');
 
-
+$response = $client->getAcsResponse($request);
 print_r("\r\n");
 print_r($response);
 

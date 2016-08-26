@@ -1,7 +1,7 @@
 <?php
 
 include_once '../aliyun-php-sdk-core/Config.php';
-use \PushNoticeToiOS\Request\V20150827 as PushNoticeToiOS;
+use \Push\Request\V20150827 as Push;
 
 // 设置你的AccessKeyId/AccessSecret/AppKey
 $accessKeyId = "";
@@ -9,7 +9,7 @@ $accessSecret = "";
 $appKey = 123456;
 $iClientProfile = DefaultProfile::getProfile("cn-hangzhou", $accessKeyId, $accessSecret);
 $client = new DefaultAcsClient($iClientProfile);
-$request = new PushNoticeToiOS\PushNoticeToiOSRequest();
+$request = new Push\PushNoticeToiOSRequest();
 
 
 $request->setAppKey($appKey);
