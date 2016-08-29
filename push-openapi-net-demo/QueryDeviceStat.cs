@@ -11,36 +11,42 @@ namespace AlibabaCloud
         static void Main()
         {
             IClientProfile clientProfile = DefaultProfile.GetProfile("cn-hangzhou", "<your access key id>", "<your access key secret>");
-	    DefaultAcsClient client = new DefaultAcsClient(clientProfile);
+            DefaultAcsClient client = new DefaultAcsClient(clientProfile);
             QueryDeviceStatRequest request = new QueryDeviceStatRequest();
-            request.AppKey = <your appKey>;
+            request.AppKey = <Your AppKey>;
 
-            request.QueryType = 'Total';
-            request.DeviceType = 'All';
-            request.StartTime = '';
-            request.EndTime = '';
+            request.QueryType = "Total";
+            request.DeviceType = "All";
+            String startTime = DateTime.UtcNow.AddDays(-7).ToString("yyyy-MM-ddTHH\\:mm\\:ssZ");
+            String endTime = DateTime.UtcNow.ToString("yyyy-MM-ddTHH\\:mm\\:ssZ");
+            request.StartTime = startTime;
+            request.EndTime = endTime;
 
             try
             {
                 QueryDeviceStatResponse response = client.GetAcsResponse(request);
                 Console.WriteLine("RequestId:" + response.RequestId);
-                Console.WriteLine("time:"+response.getSentCount);
-                Console.WriteLine("DeviceType:"+response.getReceivedCount);
-                Console.WriteLine("count:"+response.getSentCount);
+                foreach(QueryDeviceStatResponse.AppDeviceStat stat in response.AppDeviceStats)
+                {
+                    Console.WriteLine("time:" + stat.Time);
+                    Console.WriteLine("DeviceType:" + stat.DeviceType);
+                    Console.WriteLine("count:" + stat.Count);
+                }
                 Console.ReadLine();
             }
             catch (ServerException e)
             {
                 Console.WriteLine(e.ErrorCode);
                 Console.WriteLine(e.ErrorMessage);
+                Console.ReadLine();
             }
             catch (ClientException e)
             {
                 Console.WriteLine(e.ErrorCode);
                 Console.WriteLine(e.ErrorMessage);
+                Console.ReadLine();
             }
         }
-            
+
     }
 }
-

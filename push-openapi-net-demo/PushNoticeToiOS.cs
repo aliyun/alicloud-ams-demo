@@ -26,18 +26,19 @@ namespace AlibabaCloud
                 PushNoticeToiOSResponse response = client.GetAcsResponse(request);
                 Console.WriteLine("RequestId:" + response.RequestId);
                 Console.WriteLine("ResponseId:"+response.ResponseId);
-                Console.WriteLine("message:"+response.Message);
                 Console.ReadLine();
             }
             catch (ServerException e)
             {
                 Console.WriteLine(e.ErrorCode);
                 Console.WriteLine(e.ErrorMessage);
+		Console.ReadLine();
             }
             catch (ClientException e)
             {
                 Console.WriteLine(e.ErrorCode);
                 Console.WriteLine(e.ErrorMessage);
+		Console.ReadLine();
             }
         }
             
