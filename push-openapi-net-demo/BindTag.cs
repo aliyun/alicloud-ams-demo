@@ -6,16 +6,16 @@ using System;
 
 namespace AlibabaCloud
 {
-    class QueryPushStat
+    class BindTag
     {
         static void Main()
         {
             IClientProfile clientProfile = DefaultProfile.GetProfile("cn-hangzhou", "<your access key id>", "<your access key secret>");
-	    DefaultAcsClient client = new DefaultAcsClient(clientProfile);
- 	    BindTagRequest request = new BindTagRequest();
+            DefaultAcsClient client = new DefaultAcsClient(clientProfile);
+            BindTagRequest request = new BindTagRequest();
             request.AppKey = <Your AppKay>;
             request.KeyType = 1;//1 : device 2 : account
-            request.ClientKey = <Your DeviceID>;
+            request.ClientKey = <Your DeviceId>;
             request.TagName = "tag1";
 
             try

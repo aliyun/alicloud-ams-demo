@@ -11,8 +11,8 @@ namespace AlibabaCloud
         static void Main()
         {
             IClientProfile clientProfile = DefaultProfile.GetProfile("cn-hangzhou", "<your access key id>", "<your access key secret>");
-	    DefaultAcsClient client = new DefaultAcsClient(clientProfile);
-   	    QueryDeviceStatRequest request = new QueryDeviceStatRequest();
+            DefaultAcsClient client = new DefaultAcsClient(clientProfile);
+            QueryDeviceStatRequest request = new QueryDeviceStatRequest();
             request.AppKey = <Your AppKey>;
 
             request.QueryType = "Total";

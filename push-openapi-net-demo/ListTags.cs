@@ -6,12 +6,12 @@ using System;
 
 namespace AlibabaCloud
 {
-    class QueryPushStat
+    class ListTags
     {
         static void Main()
         {
             IClientProfile clientProfile = DefaultProfile.GetProfile("cn-hangzhou", "<your access key id>", "<your access key secret>");
- 	    DefaultAcsClient client = new DefaultAcsClient(clientProfile);
+            DefaultAcsClient client = new DefaultAcsClient(clientProfile);
             ListTagsRequest request = new ListTagsRequest();
             request.AppKey = <Your AppKey>;
 

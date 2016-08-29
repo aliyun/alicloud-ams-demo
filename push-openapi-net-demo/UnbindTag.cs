@@ -6,13 +6,13 @@ using System;
 
 namespace AlibabaCloud
 {
-    class QueryPushStat
+    class UnbindTag
     {
         static void Main()
         {
             IClientProfile clientProfile = DefaultProfile.GetProfile("cn-hangzhou", "<your access key id>", "<your access key secret>");
-	    DefaultAcsClient client = new DefaultAcsClient(clientProfile);
-	    UnbindTagRequest request = new UnbindTagRequest();
+            DefaultAcsClient client = new DefaultAcsClient(clientProfile);
+            UnbindTagRequest request = new UnbindTagRequest();
             request.AppKey = <Your AppKey>;
             request.KeyType = 1;//1 : device 2 : account
             request.ClientKey = <Your DeviceId>";
