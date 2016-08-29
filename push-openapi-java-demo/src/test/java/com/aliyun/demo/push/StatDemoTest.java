@@ -24,8 +24,8 @@ public class StatDemoTest extends BaseTest {
             System.out.printf("RequestId: %s\n" , response.getRequestId());
 
             for (QueryPushStatResponse.PushStat item : response.getPushStats()) {
-                System.out.printf("MessageId: %s , ReceivedCount: %s, SentCount: %s\n",
-                        item.getMessageId(), item.getReceivedCount(), item.getSentCount());
+                System.out.printf("MessageId: %s , ReceivedCount: %s, SentCount: %s, OpenedCount: %s, DeletedCount: %s\n",
+                        item.getMessageId(), item.getReceivedCount(), item.getSentCount(), item.getOpenedCount(), item.getDeletedCount);
             }
         }
 
@@ -52,8 +52,8 @@ public class StatDemoTest extends BaseTest {
             System.out.printf("RequestId: %s\n",response.getRequestId());
 
             for (QueryAppPushStatResponse.AppPushStat stat : response.getAppPushStats()) {
-                System.out.printf("Time: %s, ReceivedCount: %s, SentCount: %s \n",
-                        stat.getTime(), stat.getReceivedCount(), stat.getSentCount());
+                System.out.printf("Time: %s, ReceivedCount: %s, SentCount: %s, OpenedCount: %s, DeletedCount: %s\\\n",
+                        stat.getTime(), stat.getReceivedCount(), stat.getSentCount(), stat.getOpenedCount(), stat.getDeletedCount());
             }
         }
 

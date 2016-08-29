@@ -28,8 +28,10 @@ namespace AlibabaCloud
                 foreach (QueryAppPushStatResponse.AppPushStat stat in response.AppPushStats)
                 {
                     Console.WriteLine("MessageIdt:" + stat.Time);
-                    Console.WriteLine("SentCountt:" + stat.SentCount);
+                    Console.WriteLine("SentCount:" + stat.SentCount);
                     Console.WriteLine("ReceivedCount:" + stat.ReceivedCount);
+                    Console.WriteLine("OpenedCount:" + stat.OpenedCount);
+                    Console.WriteLine("DeletedCount:" + stat.DeletedCount);
                 }
                 Console.ReadLine();
             }
