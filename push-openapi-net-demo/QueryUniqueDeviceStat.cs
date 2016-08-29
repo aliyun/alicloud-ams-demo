@@ -13,17 +13,23 @@ namespace AlibabaCloud
             IClientProfile clientProfile = DefaultProfile.GetProfile("cn-hangzhou", "<your access key id>", "<your access key secret>");
 	    DefaultAcsClient client = new DefaultAcsClient(clientProfile);
             QueryUniqueDeviceStatRequest request = new QueryUniqueDeviceStatRequest();
-            request.AppKey = <your appKey>;
+            request.AppKey = <Your AppKey>;
 
-            request.StartTime = '';
-            request.EndTime = '';
+            String startTime = DateTime.UtcNow.AddDays(-7).ToString("yyyy-MM-ddTHH\\:mm\\:ssZ");
+            String endTime = DateTime.UtcNow.AddDays(-7).ToString("yyyy-MM-ddTHH\\:mm\\:ssZ");
+            request.StartTime = startTime;
+            request.EndTime = endTime;
 
             try
             {
                 QueryUniqueDeviceStatResponse response = client.GetAcsResponse(request);
                 Console.WriteLine("RequestId:" + response.RequestId);
-                Console.WriteLine("time:"+response.getSentCount);
-                Console.WriteLine("count:"+response.getSentCount);
+                foreach (QueryUniqueDeviceStatResponse.AppDeviceStat stat in response.AppDeviceStats)
+                {
+                    Console.WriteLine("time:" + stat.Time);
+                    Console.WriteLine("count:" + stat.Count);
+                }
+             
                 Console.ReadLine();
             }
             catch (ServerException e)
@@ -37,7 +43,7 @@ namespace AlibabaCloud
                 Console.WriteLine(e.ErrorMessage);
             }
         }
-            
+
     }
 }
 

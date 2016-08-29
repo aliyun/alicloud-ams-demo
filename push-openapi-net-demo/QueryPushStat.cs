@@ -12,31 +12,37 @@ namespace AlibabaCloud
         {
             IClientProfile clientProfile = DefaultProfile.GetProfile("cn-hangzhou", "<your access key id>", "<your access key secret>");
 	    DefaultAcsClient client = new DefaultAcsClient(clientProfile);
-            QueryPushStatRequest request = new QueryPushStatRequest();
-            request.AppKey = <your appKey>;
-
-            request.MessageId = '500345';
+	    QueryPushStatRequest request = new QueryPushStatRequest();
+            request.AppKey = <your appKey>; 
+            request.MessageId = "<MessageId>";
+            
             try
             {
                 QueryPushStatResponse response = client.GetAcsResponse(request);
                 Console.WriteLine("RequestId:" + response.RequestId);
-                Console.WriteLine("ReceivedCount:"+response.getReceivedCount);
-                Console.WriteLine("SentCount:"+response.getSentCount);
-                Console.WriteLine("MessageId:"+response.getMessageId);
+                foreach (QueryPushStatResponse.PushStat stat in response.PushStats)
+                {
+                    Console.WriteLine("MessageIdt:" + stat.MessageId);
+                    Console.WriteLine("SentCountt:" + stat.SentCount);
+                    Console.WriteLine("ReceivedCount:" + stat.ReceivedCount);
+                   
+                }
                 Console.ReadLine();
             }
             catch (ServerException e)
             {
                 Console.WriteLine(e.ErrorCode);
                 Console.WriteLine(e.ErrorMessage);
+                Console.ReadLine();
             }
             catch (ClientException e)
             {
                 Console.WriteLine(e.ErrorCode);
                 Console.WriteLine(e.ErrorMessage);
+                Console.ReadLine();
             }
         }
-            
+
     }
-}
+} 
 

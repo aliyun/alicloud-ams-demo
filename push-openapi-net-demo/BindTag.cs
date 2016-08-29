@@ -6,39 +6,37 @@ using System;
 
 namespace AlibabaCloud
 {
-    class Push
+    class QueryPushStat
     {
         static void Main()
         {
             IClientProfile clientProfile = DefaultProfile.GetProfile("cn-hangzhou", "<your access key id>", "<your access key secret>");
 	    DefaultAcsClient client = new DefaultAcsClient(clientProfile);
-            PushMessageToiOSRequest request = new PushMessageToiOSRequest();
-            request.AppKey = <your Appkey>;
-            request.Target = "all";
-            request.TargetValue = "all";
-            request.Message = ".net message";
-            request.Summary = ".net summary";
+ 	    BindTagRequest request = new BindTagRequest();
+            request.AppKey = <Your AppKay>;
+            request.KeyType = 1;//1 : device 2 : account
+            request.ClientKey = <Your DeviceID>;
+            request.TagName = "tag1";
+
             try
             {
-                PushMessageToiOSResponse response = client.GetAcsResponse(request);
+                BindTagResponse response = client.GetAcsResponse(request);
                 Console.WriteLine("RequestId:" + response.RequestId);
-                Console.WriteLine("ResponseId:"+response.ResponseId);
                 Console.ReadLine();
             }
             catch (ServerException e)
             {
                 Console.WriteLine(e.ErrorCode);
                 Console.WriteLine(e.ErrorMessage);
-		Console.ReadLine();
+                Console.ReadLine();
             }
             catch (ClientException e)
             {
                 Console.WriteLine(e.ErrorCode);
                 Console.WriteLine(e.ErrorMessage);
-		Console.ReadLine();
+                Console.ReadLine();
             }
         }
-            
+
     }
 }
-
