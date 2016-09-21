@@ -158,4 +158,18 @@ public class AdvancedPushDemoTest extends BaseTest {
         System.out.printf("RequestId: %s, ResponseId: %s\n",
                 pushResponse.getRequestId(), pushResponse.getResponseId());
     }
+    /**
+     * 取消定时推送
+     * <p>
+     * //
+     */
+    @Test
+    public void testCancelPush() throws Exception {
+        CancelPushRequest request = new CancelPushRequest();
+        request.setAppKey(appKey);
+        request.setMessageId("510456");//推送时返回的ResponseId。
+        CancelPushResponse response = client.getAcsResponse(request);
+        System.out.println(response.getRequestId());
+
+    }
 }

@@ -8,11 +8,13 @@ $accessSecret = "";
 $appKey = 123456;
 $deviceId = '';
 $account = '';
+$messageId='';
 $iClientProfile = DefaultProfile::getProfile("cn-hangzhou", $accessKeyId, $accessSecret);
 $client = new DefaultAcsClient($iClientProfile);
-$request = new Push\ListTagsRequest();
+$request = new Push\CancelPushRequest();
 
 $request->setAppKey($appKey);
+$request->setKeyMessageId(messageId);//推送时返回的responseID
 
 $response = $client->getAcsResponse($request);
 print_r("\r\n");
