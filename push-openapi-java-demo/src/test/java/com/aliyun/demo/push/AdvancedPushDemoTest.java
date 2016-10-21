@@ -38,7 +38,11 @@ public class AdvancedPushDemoTest extends BaseTest {
         // 推送配置: iOS
         pushRequest.setiOSBadge("5"); // iOS应用图标右上角角标
         pushRequest.setiOSMusic("default"); // iOS通知声音
-        pushRequest.setiOSExtParameters("{\"k1\":\"ios\",\"k2\":\"v2\"}"); //自定义的kv结构,开发者扩展用 针对iOS设备
+	pushRequest.setiOSTitle("iOS 10 Title");//iOS通知标题(iOS 10+)
+	pushRequest.setiOSSubtitle("iOS 10 Subtitle");//iOS通知副标题(iOS 10+)
+	pushRequest.setiOSMutableContent(true);//使能通知扩展处理(iOS 10 +)
+	pushRequest.setiOSNotificationCategory("test_category");//设定通知Catetory(iOS 10+)
+        pushRequest.setiOSExtParameters("{\"attachment\":\"https://xxxx.xxx/notification_pic.png\",\"k2\":\"v2\"}"); //自定义的kv结构,开发者扩展用 针对iOS设备 iOS 10+用attachment可以指定富媒体推送通知的资源Url
         pushRequest.setApnsEnv("DEV");
         //pushRequest.setRemind(false); // 当APP不在线时候，是否通过通知提醒
         // 推送配置: Android

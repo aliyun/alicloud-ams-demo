@@ -29,7 +29,16 @@ push.push({
   // 推送控制, 是否离线存储
   //StoreOffline: false,
   iOSBadge:'6',
-  iOSExtParameters:"{}"
+  //iOS通知标题(iOS 10+)
+  iOSTitle:'iOS 10 Title',
+  //iOS通知副标题(iOS 10+)
+  iOSSubtitle:'iOS 10 Subtitle',
+  //使能通知扩展处理(iOS 10 +)
+  iOSMutableContent: true,
+  //设定通知Category(iOS 10+)
+  iOSNotificationCategory:'test_category',
+  //自定义的kv结构（iOS10+ 可以使用关键字attachment来指定富媒体推送通知的资源Url
+  iOSExtParameters:"{\"attachment\":\"https://xxxx.xxx/notification_pic.png\",\"k1\":\"v1\"}"
 }, function (err, res) {
   console.log(err, res);
 });
