@@ -38,8 +38,16 @@ namespace AlibabaCloud
             request.IOSBadge = "1";
             // iOS通知声音
             request.IOSMusic = "default";
-            //自定义的kv结构,开发者扩展用 针对iOS设备
-            request.IOSExtParameters = "{\"key1\":\"value1\"}";
+	    //iOS通知标题(iOS 10+)
+	    request.IOSTitle = "iOS 10 Title";
+	    //iOS通知副标题(iOS 10+)
+	    request.IOSSubtitle = "iOS 10 Subtitle";
+	    //使能通知扩展处理(iOS 10+)
+	    request.IOSMutableContent = true;
+	    //设定通知Category
+	    request.IOSNotificationCategory = "test_category";
+            //自定义的kv结构,开发者扩展用 针对iOS设备, iOS 10+ 可以用attachment关键字指定富媒体推送通知的资源Url
+            request.IOSExtParameters = "{\"attachment\":\"https://xxxx.xxx/notification_pic.png\",\"key1\":\"value1\"}";
             request.ApnsEnv = "DEV";            
 	    // 推送时设备不在线（既与移动推送的服务端的长连接通道不通），则这条推送会做为通知，通过苹果的APNs通道送达一次(发送通知时,Summary为通知的内容,Message不起作用)。注意：离线消息转通知仅适用于生产环境
             // request.Remind = false;

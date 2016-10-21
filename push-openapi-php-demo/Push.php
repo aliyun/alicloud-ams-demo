@@ -28,7 +28,11 @@ $request->setSummary("PushRequest summary"); // 通知的摘要
 // 推送配置: iOS
 $request->setiOSBadge("5"); // iOS应用图标右上角角标
 $request->setiOSMusic("default"); // iOS通知声音
-$request->setiOSExtParameters("{\"k1\":\"ios\",\"k2\":\"v2\"}"); //自定义的kv结构,开发者扩展用 针对iOS设备
+$request->setiOSTitle("iOS 10 Title");//iOS通知标题(iOS 10+)
+$request->setiOSSubtitle("iOS 10 Subtitle");//iOS通知副标题(iOS 10+)
+$request->setiOSMutableContent("true");//使能通知扩展处理(iOS 10+)
+$request->setiOSNotificationCategory("test_category");//设定通知Category(iOS 10+)
+$request->setiOSExtParameters("{\"attachment\":\"https://xxxx.xxx/notification_pic.png\",\"k2\":\"v2\"}"); //自定义的kv结构,开发者扩展用 针对iOS设备（iOS 10+可以使用attachment关键字来指定富媒体推送通知的资源Url）
 $request->setApnsEnv("DEV");
 //$request->setRemind("false"); // 推送时设备不在线（既与移动推送的服务端的长连接通道不通），则这条推送会做为通知，通过苹果的APNs通道送达一次(发送通知时,Summary为通知的内容,Message不起作用)。注意：离线消息转通知仅适用于生产环境
 
