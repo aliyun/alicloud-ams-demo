@@ -9,7 +9,7 @@ clt = client.AcsClient(properties.accessKeyId,properties.accessKeySecret,propert
 request = BindTagRequest.BindTagRequest()
 request.set_AppKey(properties.appKey)
 request.set_ClientKey(properties.deviceIds);
-##1: device 2: account
+##1: device 2: account 3 : alias
 request.set_KeyType(1)
 request.set_TagName("tag1")
 
