@@ -14,7 +14,7 @@ namespace AlibabaCloud
             DefaultAcsClient client = new DefaultAcsClient(clientProfile);
             BindTagRequest request = new BindTagRequest();
             request.AppKey = <Your AppKay>;
-            request.KeyType = 1;//1 : device 2 : account
+            request.KeyType = 1;//1 : device 2 : account 3 : alias
             request.ClientKey = <Your DeviceId>;
             request.TagName = "tag1";
 

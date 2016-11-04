@@ -13,7 +13,7 @@ $client = new DefaultAcsClient($iClientProfile);
 $request = new Push\BindTagRequest();
 
 $request->setAppKey($appKey);
-$request->setKeyType(1);//1: device 2: account
+$request->setKeyType(1);//1: device 2: account 3 : alias
 $request->setClientKey($deviceId);
 $request->setTagName("tag2");
 

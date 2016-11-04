@@ -32,7 +32,7 @@ public class TagDemoTest extends BaseTest {
         QueryTagsRequest request = new QueryTagsRequest();
         request.setAppKey(appKey);
         request.setClientKey(deviceIds);
-        request.setKeyType(1);//1 : device 2 : account
+        request.setKeyType(1);//1 : device 2 : account 3 : alias
 
         QueryTagsResponse response = client.getAcsResponse(request);
         System.out.printf("RequestId : %s\n " , response.getRequestId());
@@ -50,7 +50,7 @@ public class TagDemoTest extends BaseTest {
         BindTagRequest request = new BindTagRequest();
         request.setAppKey(appKey);
         request.setClientKey(deviceIds);
-        request.setKeyType(1);//1 : device 2 : account
+        request.setKeyType(1);//1 : device 2 : account 3 : alias
         request.setTagName("tag1");
 
         BindTagResponse response = client.getAcsResponse(request);
@@ -64,7 +64,7 @@ public class TagDemoTest extends BaseTest {
         UnbindTagRequest request = new UnbindTagRequest();
         request.setAppKey(appKey);
         request.setClientKey(deviceIds);
-        request.setKeyType(1);//1 : device 2 : account
+        request.setKeyType(1);//1 : device 2 : account 3 : alias
         request.setTagName("tag1");
 
         UnbindTagResponse response = client.getAcsResponse(request);
