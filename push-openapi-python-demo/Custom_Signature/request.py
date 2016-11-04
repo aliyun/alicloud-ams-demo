@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from sign import *
 def request(host,params,secret):
     param_string = ''

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from datetime import  * # 用于获取时间戳 
 from random import choice # 用于获取随机数
 from string import ascii_uppercase
