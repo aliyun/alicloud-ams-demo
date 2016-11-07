@@ -1,5 +1,7 @@
 package com.aliyun.demo.push;
 
+import com.aliyuncs.push.model.v20150827.CancelPushRequest;
+import com.aliyuncs.push.model.v20150827.CancelPushResponse;
 import com.aliyuncs.push.model.v20150827.PushRequest;
 import com.aliyuncs.push.model.v20150827.PushResponse;
 import com.aliyuncs.utils.ParameterHelper;
