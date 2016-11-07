@@ -25,7 +25,7 @@ public class StatDemoTest extends BaseTest {
 
             for (QueryPushStatResponse.PushStat item : response.getPushStats()) {
                 System.out.printf("MessageId: %s , ReceivedCount: %s, SentCount: %s, OpenedCount: %s, DeletedCount: %s\n",
-                        item.getMessageId(), item.getReceivedCount(), item.getSentCount(), item.getOpenedCount(), item.getDeletedCount);
+                        item.getMessageId(), item.getReceivedCount(), item.getSentCount(), item.getOpenedCount(), item.getDeletedCount());
             }
         }
 
