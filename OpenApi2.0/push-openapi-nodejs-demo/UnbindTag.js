@@ -4,7 +4,7 @@ var push = new ALY.PUSH({
       accessKeyId: '<your access key id>',
       secretAccessKey: '<your access key secret>',
       endpoint: 'http://cloudpush.aliyuncs.com',
-      apiVersion: '2016-08-01’
+      apiVersion: '2016-08-01'
     }
 );
 
