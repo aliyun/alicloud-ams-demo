@@ -46,23 +46,22 @@ public class AdvancedPushDemoTest extends BaseTest {
 	pushRequest.setiOSNotificationCategory("test_category");//设定通知Catetory(iOS 10+)
         pushRequest.setiOSExtParameters("{\"attachment\":\"https://xxxx.xxx/notification_pic.png\",\"k2\":\"v2\"}"); //自定义的kv结构,开发者扩展用 针对iOS设备 iOS 10+用attachment可以指定富媒体推送通知的资源Url
         pushRequest.setApnsEnv("DEV");
-        //pushRequest.setRemind(false); // 当APP不在线时候，是否通过通知提醒
+        pushRequest.setRemind(false); // 当APP不在线时候，是否通过通知提醒
         // 推送配置: Android
         //设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffLine设为true
-        //pushRequest.setXiaomiActivity("_Your_XiaoMi_Activity_");
+        pushRequest.setXiaomiActivity("_Your_XiaoMi_Activity_");
         pushRequest.setAndroidOpenType("3"); // 点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 : 无跳转逻辑
         pushRequest.setAndroidOpenUrl("http://www.baidu.com"); // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
         pushRequest.setAndroidExtParameters("{\"k1\":\"android\",\"k2\":\"v2\"}"); // 设定android类型设备通知的扩展属性
 
 
         // 推送控制
-        //final Date pushDate = new Date(System.currentTimeMillis() + 30 * 1000); // 30秒之间的时间点, 也可以设置成你指定固定时间
-        //final String pushTime = ParameterHelper.getISO8601Time(pushDate);
-        // pushRequest.setPushTime(pushTime); // 延后推送。可选，如果不设置表示立即推送
-        //pushRequest.setStoreOffline(false); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
-        //final String expireTime = ParameterHelper.getISO8601Time(new Date(System.currentTimeMillis() + 12 * 3600 * 1000)); // 12小时后消息失效, 不会再发送
-        //pushRequest.setExpireTime(expireTime);
-        //pushRequest.setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
+        final Date pushDate = new Date(System.currentTimeMillis() + 30 * 1000); // 30秒之间的时间点, 也可以设置成你指定固定时间
+        final String pushTime = ParameterHelper.getISO8601Time(pushDate);
+        pushRequest.setPushTime(pushTime); // 延后推送。可选，如果不设置表示立即推送
+        pushRequest.setStoreOffline(false); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
+        final String expireTime = ParameterHelper.getISO8601Time(new Date(System.currentTimeMillis() + 12 * 3600 * 1000)); // 12小时后消息失效, 不会再发送
+        pushRequest.setExpireTime(expireTime);
 
         PushResponse pushResponse = client.getAcsResponse(pushRequest);
         System.out.printf("RequestId: %s, ResponseId: %s\n",

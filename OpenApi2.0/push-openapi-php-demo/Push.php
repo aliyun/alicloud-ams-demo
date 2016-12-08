@@ -50,7 +50,6 @@ $request->setPushTime($pushTime);
 $expireTime = gmdate('Y-m-d\TH:i:s\Z', strtotime('+1 day'));//设置失效时间为1天
 $request->setExpireTime($expireTime);
 $request->setStoreOffline("false"); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
-$request->setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
 
 $response = $client->getAcsResponse($request);
 print_r("\r\n");

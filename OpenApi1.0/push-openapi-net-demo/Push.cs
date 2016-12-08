@@ -58,17 +58,16 @@ namespace AlibabaCloud
             // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
             request.AndroidOpenUrl = "http://www.baidu.com";
             //设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffLine设为true)
-            //request.XiaomiActivity = "_Your_XiaoMi_Activity_";
+            request.XiaomiActivity = "_Your_XiaoMi_Activity_";
             // 设定android类型设备通知的扩展属性
             request.AndroidExtParameters = "{\"k1\":\"android\",\"k2\":\"v2\"}";
 
             // 推送控制
-	    //String pushTime = DateTime.UtcNow.AddSeconds(3).ToString("yyyy-MM-ddTHH\\:mm\\:ssZ");
-	    //request.PushTime = pushTime;//延迟3秒发送
-	    //String expireTime = DateTime.UtcNow.AddDays(2).ToString("yyyy-MM-ddTHH\\:mm\\:ssZ");
-	    //request.ExpireTime = expireTime;//设置过期时间为2天
-            //request.StoreOffline = false;
-            //request.BatchNumber = "100010";
+	    String pushTime = DateTime.UtcNow.AddSeconds(3).ToString("yyyy-MM-ddTHH\\:mm\\:ssZ");
+	    request.PushTime = pushTime;//延迟3秒发送
+	    String expireTime = DateTime.UtcNow.AddDays(2).ToString("yyyy-MM-ddTHH\\:mm\\:ssZ");
+	    request.ExpireTime = expireTime;//设置过期时间为2天
+            request.StoreOffline = false;
             
             try
             {
