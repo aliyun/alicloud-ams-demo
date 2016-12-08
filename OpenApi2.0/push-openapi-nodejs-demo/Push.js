@@ -43,8 +43,7 @@ push.push({
   PushTime: (new Date((new Date()).getTime() + 3600 * 1000)).toISOString().replace(/\.\d\d\d/g,''),
   // 离线消息的过期时间，过期则不会再被发送。离线消息最长保存72小时，过期时间时长不会超过发送时间加72小时。时间格式按照ISO8601标准表示，并需要使用UTC时间，格式为YYYY-MM-DDThh:mm:ssZ
   ExpireTime: (new Date((new Date()).getTime() + 12 * 3600 * 1000)).toISOString().replace(/\.\d\d\d/g,''),
-  StoreOffLine: false,//离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
-  BatchNumber: "100010"//批次编号,用于活动效果统计. 设置成业务可以记录的字符串
+  StoreOffLine: false//离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
 }, function (err, res) {
   console.log(err, res);
 });

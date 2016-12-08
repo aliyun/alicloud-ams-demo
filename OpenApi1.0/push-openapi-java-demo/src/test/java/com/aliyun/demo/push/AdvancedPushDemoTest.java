@@ -1,5 +1,4 @@
-package com.aliyun.demo.push;
-
+package com.aliyun.demo.push; 
 import com.aliyuncs.push.model.v20150827.CancelPushRequest;
 import com.aliyuncs.push.model.v20150827.CancelPushResponse;
 import com.aliyuncs.push.model.v20150827.PushRequest;
@@ -58,11 +57,10 @@ public class AdvancedPushDemoTest extends BaseTest {
         // 推送控制
         //final Date pushDate = new Date(System.currentTimeMillis() + 30 * 1000); // 30秒之间的时间点, 也可以设置成你指定固定时间
         //final String pushTime = ParameterHelper.getISO8601Time(pushDate);
-        // pushRequest.setPushTime(pushTime); // 延后推送。可选，如果不设置表示立即推送
+        //pushRequest.setPushTime(pushTime); // 延后推送。可选，如果不设置表示立即推送
         //pushRequest.setStoreOffline(false); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
         //final String expireTime = ParameterHelper.getISO8601Time(new Date(System.currentTimeMillis() + 12 * 3600 * 1000)); // 12小时后消息失效, 不会再发送
         //pushRequest.setExpireTime(expireTime);
-        //pushRequest.setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
 
         PushResponse pushResponse = client.getAcsResponse(pushRequest);
         System.out.printf("RequestId: %s, ResponseId: %s\n",

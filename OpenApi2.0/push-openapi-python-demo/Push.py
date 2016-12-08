@@ -71,7 +71,6 @@ request.set_ExpireTime(expireTime)
 #设置过期时间，单位是小时
 request.set_TimeOut(24)
 request.set_StoreOffLine(True)
-request.set_BatchNumber("100010")
 
 result = clt.do_action(request)
 print result

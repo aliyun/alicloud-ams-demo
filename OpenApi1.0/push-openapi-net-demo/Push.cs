@@ -68,7 +68,6 @@ namespace AlibabaCloud
 	    //String expireTime = DateTime.UtcNow.AddDays(2).ToString("yyyy-MM-ddTHH\\:mm\\:ssZ");
 	    //request.ExpireTime = expireTime;//设置过期时间为2天
             //request.StoreOffline = false;
-            //request.BatchNumber = "100010";
             
             try
             {
