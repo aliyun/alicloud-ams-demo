@@ -57,7 +57,7 @@ namespace AlibabaCloud
             request.AndroidOpenType = "3";
             // Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
             request.AndroidOpenUrl = "http://www.baidu.com";
-            //设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffLine设为true)
+            //设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffline设为true)
             //request.XiaomiActivity = "_Your_XiaoMi_Activity_";
             // 设定android类型设备通知的扩展属性
             request.AndroidExtParameters = "{\"k1\":\"android\",\"k2\":\"v2\"}";

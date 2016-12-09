@@ -50,7 +50,7 @@ request.set_ApnsEnv("DEV")
 
 #android配置
 
-#设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffLine设为true）
+#设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffline设为true）
 #request.set_XiaomiActivity("_Your_XiaoMi_Activity_")
 #点击通知后动作,1:打开应用 2: 打开应用Activity 3:打开 url 4 : 无跳转逻辑
 request.set_AndroidOpenType("3")

@@ -64,7 +64,7 @@ namespace AlibabaCloud
 	    request.AndroidActivity = "com.alibaba.push2.demo.XiaoMiPushActivity";
 	    //Android通知音乐
 	    request.AndroidMusic = "default";
-	    //设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffLine设为true)
+	    //设置该参数后启动小米托管弹窗功能，此处指定通知点击后跳转的Activity（托管弹窗的前提条件：1. 继承小米辅助通道；2. storeOffline设为true)
             request.AndroidXiaoMiActivity  = "com.ali.demo.MiActivity";
             //小米弹窗标题
 	    request.AndroidXiaoMiNotifyTitle = "Mi Title";
