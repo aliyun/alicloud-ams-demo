@@ -11,8 +11,9 @@ import org.junit.Test;
 public class StatTest extends BaseTest {
 
     /**
-     * 查询某次推送统计
+     * 任务维度推送统计
      * 查询: 发送数,到达数,打开数,删除数
+     * 参考文档 ：https://help.aliyun.com/document_detail/48097.html
      */
     @Test
     public void testQueryPushStatByMsg() throws Exception {
@@ -30,7 +31,8 @@ public class StatTest extends BaseTest {
     }
 
     /**
-     * 查询多次推送统计
+     * APP维度推送统计
+     * 参考文档 ：https://help.aliyun.com/document_detail/48093.html
      */
     @Test
     public void testQueryPushStatByApp() throws Exception {
@@ -57,7 +59,8 @@ public class StatTest extends BaseTest {
     }
 
     /**
-     * 查询设备统计
+     * 设备新增与留存
+     * 参考文档 ：https://help.aliyun.com/document_detail/48094.html
      */
     @Test
     public void testQueryDeviceStat() throws Exception {
@@ -85,7 +88,8 @@ public class StatTest extends BaseTest {
     }
 
     /**
-     * 查询去重设备统计
+     * 去重设备统计
+     * 参考文档 ：https://help.aliyun.com/document_detail/48092.html
      */
     @Test
     public void testQueryUniqueDeviceStat() throws Exception {

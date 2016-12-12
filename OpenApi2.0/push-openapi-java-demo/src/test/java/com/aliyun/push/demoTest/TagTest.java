@@ -11,7 +11,8 @@ import java.util.List;
 public class TagTest extends BaseTest {
 
     /**
-     * 查询某个APP的Tag列表
+     * TAG列表
+     * 参考文档 ：https://help.aliyun.com/document_detail/48082.html
      */
 
     @Test
@@ -29,7 +30,8 @@ public class TagTest extends BaseTest {
     }
 
     /**
-     * 查询某个对象的所有Tag列表
+     * 查询TAG
+     * https://help.aliyun.com/document_detail/48081.html?
      */
 
     @Test
@@ -50,7 +52,8 @@ public class TagTest extends BaseTest {
 
     }
     /**
-     * 绑定Tag
+     * 绑定TAG
+     * 参考文档 ：https://help.aliyun.com/document_detail/48083.html
      */
     @Test
     public void testBindTag() throws Exception {
@@ -67,7 +70,8 @@ public class TagTest extends BaseTest {
 
     }
     /**
-     * 解绑Tag
+     * 解绑TAG
+     * 参考文档 ：https://help.aliyun.com/document_detail/48084.html
      */
     @Test
     public void testUnbindTag() throws Exception {

@@ -1,4 +1,6 @@
 package com.aliyun.demo.push; 
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.push.model.v20150827.CancelPushRequest;
 import com.aliyuncs.push.model.v20150827.CancelPushResponse;
 import com.aliyuncs.push.model.v20150827.PushRequest;
@@ -16,13 +18,17 @@ public class AdvancedPushDemoTest extends BaseTest {
     /**
      * 推送高级接口
      * <p>
-     * 参见文档 https://help.aliyun.com/document_detail/mobilepush/api-reference/push-advanced.html
+     * 参见文档 https://help.aliyun.com/document_detail/30085.htm
      */
     @Test
     public void testPushNoticeToAllDeviceTypeAndAllDevice() throws Exception {
         final SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd HH:mm:ss");
         final String date = dateFormat.format(new Date());
         PushRequest pushRequest = new PushRequest();
+        //推送内容需要保护，请使用HTTPS协议
+        pushRequest.setProtocol(ProtocolType.HTTPS);
+        //推送内容较长，请使用POST请求
+        pushRequest.setMethod(MethodType.POST);
 
         // 推送目标
         pushRequest.setAppKey(appKey);
@@ -72,6 +78,10 @@ public class AdvancedPushDemoTest extends BaseTest {
         final SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd HH:mm:ss");
         final String date = dateFormat.format(new Date());
         PushRequest pushRequest = new PushRequest();
+        //推送内容需要保护，请使用HTTPS协议
+        pushRequest.setProtocol(ProtocolType.HTTPS);
+        //推送内容较长，请使用POST请求
+        pushRequest.setMethod(MethodType.POST);
 
         // 推送目标
         pushRequest.setAppKey(appKey);

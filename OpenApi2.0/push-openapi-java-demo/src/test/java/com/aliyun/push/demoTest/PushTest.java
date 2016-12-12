@@ -1,5 +1,7 @@
 package com.aliyun.push.demoTest;
 
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.push.model.v20160801.*;
 import com.aliyuncs.utils.ParameterHelper;
 import org.junit.Test;
@@ -13,14 +15,18 @@ public class PushTest extends BaseTest {
 
 
     /**
-     * 推送通知给android
+     * 推送消息给android
      * <p>
-     * 参见文档 https://help.aliyun.com/document_detail/mobilepush/api-reference/notice-to-android.html
+     * 参见文档 https://help.aliyun.com/document_detail/48085.html
      */
     @Test
     public void testPushMessageToAndroid() throws Exception {
 
         PushMessageToAndroidRequest androidRequest = new PushMessageToAndroidRequest();
+        //安全性比较高的内容建议使用HTTPS
+        androidRequest.setProtocol(ProtocolType.HTTPS);
+        //内容较大的请求，使用POST请求
+        androidRequest.setMethod(MethodType.POST);
         androidRequest.setAppKey(appKey);
         androidRequest.setTarget("ALL");
         androidRequest.setTargetValue("ALL");
@@ -35,12 +41,16 @@ public class PushTest extends BaseTest {
     /**
      * 推送通知给android
      * <p>
-     * 参见文档 https://help.aliyun.com/document_detail/mobilepush/api-reference/notice-to-android.html
+     * 参见文档 https://help.aliyun.com/document_detail/48087.html
      */
     @Test
     public void testPushNoticeToAndroid() throws Exception {
 
         PushNoticeToAndroidRequest androidRequest = new PushNoticeToAndroidRequest();
+        //安全性比较高的内容建议使用HTTPS
+        androidRequest.setProtocol(ProtocolType.HTTPS);
+        //内容较大的请求，使用POST请求
+        androidRequest.setMethod(MethodType.POST);
         androidRequest.setAppKey(appKey);
         androidRequest.setTarget("TAG");
         androidRequest.setTargetValue("tag1");
@@ -56,11 +66,15 @@ public class PushTest extends BaseTest {
     /**
      * 推送消息给iOS
      * <p>
-     * 参见文档 https://help.aliyun.com/document_detail/mobilepush/api-reference/message-to-ios.html
+     * 参见文档 https://help.aliyun.com/document_detail/48086.html
      */
     @Test
     public void testPushMessageToIOS() throws Exception {
         PushMessageToiOSRequest iOSRequest = new PushMessageToiOSRequest();
+        //安全性比较高的内容建议使用HTTPS
+        iOSRequest.setProtocol(ProtocolType.HTTPS);
+        //内容较大的请求，使用POST请求
+        iOSRequest.setMethod(MethodType.POST);
         iOSRequest.setAppKey(appKey);
         iOSRequest.setTarget("DEVICE");
         iOSRequest.setTargetValue(deviceIds);
@@ -76,12 +90,16 @@ public class PushTest extends BaseTest {
     /**
      * 推送通知给iOS
      * <p>
-     * 参见文档 https://help.aliyun.com/document_detail/mobilepush/api-reference/notice-to-ios.html
+     * 参见文档 https://help.aliyun.com/document_detail/48088.html
      */
     @Test
     public void testPushNoticeToIOS_toAll() throws Exception {
 
         PushNoticeToiOSRequest iOSRequest = new PushNoticeToiOSRequest();
+        //安全性比较高的内容建议使用HTTPS
+        iOSRequest.setProtocol(ProtocolType.HTTPS);
+        //内容较大的请求，使用POST请求
+        iOSRequest.setMethod(MethodType.POST);
         iOSRequest.setAppKey(appKey);
         // iOS的通知是通过APNS中心来发送的，需要填写对应的环境信息. DEV :表示开发环境, PRODUCT: 表示生产环境
         iOSRequest.setApnsEnv("PRODUCT");
@@ -99,13 +117,17 @@ public class PushTest extends BaseTest {
     /**
      * 推送高级接口
      * <p>
-     * 参见文档 https://help.aliyun.com/document_detail/mobilepush/api-reference/push-advanced.html
+     * 参见文档 https://help.aliyun.com/document_detail/48089.html
      * //
      */
     @Test
     public void testAdvancedPush() throws Exception {
 
         PushRequest pushRequest = new PushRequest();
+        //安全性比较高的内容建议使用HTTPS
+        pushRequest.setProtocol(ProtocolType.HTTPS);
+        //内容较大的请求，使用POST请求
+        pushRequest.setMethod(MethodType.POST);
         // 推送目标
         pushRequest.setAppKey(appKey);
         pushRequest.setTarget("DEVICE"); //推送目标: DEVICE:按设备推送 ALIAS : 按别名推送 ACCOUNT:按帐号推送  TAG:按标签推送; ALL: 广播推送

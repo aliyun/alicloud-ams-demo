@@ -16,7 +16,8 @@ import java.util.Date;
 public class RecordsTest extends BaseTest {
 
     /**
-     * 查询推送历史纪录
+     * 查询推送列表
+     * 参考文档 ：https://help.aliyun.com/document_detail/48095.html
      */
     @Test
     public void testMessageList() throws Exception {
@@ -38,7 +39,8 @@ public class RecordsTest extends BaseTest {
         }
     }
     /**
-     * 查询某次推送的参数详情
+     * 查询推送配置详情
+     * 参考文档 ：https://help.aliyun.com/document_detail/48096.html
      */
     @Test
     public void testPushDetail() throws Exception {

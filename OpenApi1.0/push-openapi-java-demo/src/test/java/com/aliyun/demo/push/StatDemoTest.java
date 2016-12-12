@@ -13,6 +13,7 @@ public class StatDemoTest extends BaseTest {
 
         /**
          * 查询某次推送统计
+         * 参见文档 ：https://help.aliyun.com/document_detail/43592.html
          */
         @Test
         public void testQueryPushStat() throws Exception {
@@ -31,6 +32,7 @@ public class StatDemoTest extends BaseTest {
 
         /**
          * 查询多次推送统计
+         * 参见文档 ： https://help.aliyun.com/document_detail/43593.html
          */
         @Test
         public void testQueryAppPushStat() throws Exception {
@@ -59,6 +61,7 @@ public class StatDemoTest extends BaseTest {
 
         /**
          * 查询设备统计
+         * 参见文档 ：https://help.aliyun.com/document_detail/43596.html
          */
         @Test
         public void testQueryDeviceStat() throws Exception {
@@ -87,6 +90,7 @@ public class StatDemoTest extends BaseTest {
 
         /**
          * 查询去重设备统计
+         * 参见文档 ： https://help.aliyun.com/document_detail/43598.html
          */
         @Test
         public void testQueryUniqueDeviceStat() throws Exception {

@@ -9,7 +9,8 @@ import org.junit.Test;
 public class AliasTest extends BaseTest {
 
     /**
-     * 查询某个设备绑定的别名
+     * 查询别名
+     * 参考文档 ：https://help.aliyun.com/document_detail/48078.html
      */
     @Test
     public void testQueryAlias() throws Exception {
@@ -28,7 +29,8 @@ public class AliasTest extends BaseTest {
     }
 
     /**
-     * 给某个设备绑定别名
+     * 绑定别名
+     * 参考文档 ：https://help.aliyun.com/document_detail/48079.html
      */
 
     @Test
@@ -46,7 +48,8 @@ public class AliasTest extends BaseTest {
     }
 
     /**
-     * 解绑设备上的别名
+     * 解绑别名
+     * https://help.aliyun.com/document_detail/48080.html
      */
 
     @Test

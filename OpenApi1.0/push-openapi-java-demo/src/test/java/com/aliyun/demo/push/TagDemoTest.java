@@ -10,6 +10,10 @@ import java.util.List;
  */
 public class TagDemoTest extends BaseTest {
 
+    /**
+     * 查询App所有的标签列表
+     * 参考文档 ：https://help.aliyun.com/document_detail/30089.html
+     * */
     @Test
     public void testListTags() throws Exception {
 
@@ -26,6 +30,10 @@ public class TagDemoTest extends BaseTest {
 
     }
 
+    /**
+     * 查询某个设备的标签列表
+     * 参考文档 ： https://help.aliyun.com/document_detail/30090.html
+     * */
     @Test
     public void testQueryTag() throws Exception {
 
@@ -44,6 +52,10 @@ public class TagDemoTest extends BaseTest {
 
     }
 
+    /**
+     * 绑定标签
+     * 参考文档 ：https://help.aliyun.com/document_detail/30087.html
+     * */
     @Test
     public void testBindTag() throws Exception {
 
@@ -58,6 +70,10 @@ public class TagDemoTest extends BaseTest {
 
     }
 
+    /**
+     * 解绑标签
+     * 参考文档 ：https://help.aliyun.com/document_detail/30088.html
+     * */
     @Test
     public void testUnbindTag() throws Exception {
 
