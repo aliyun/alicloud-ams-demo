@@ -13,11 +13,11 @@ public class AliasTest extends BaseTest {
      * 参考文档 ：https://help.aliyun.com/document_detail/48078.html
      */
     @Test
-    public void testQueryAlias() throws Exception {
+    public void testQueryAliases() throws Exception {
 
         QueryAliasesRequest request = new QueryAliasesRequest();
         request.setAppKey(appKey);
-        request.setDeviceId(deviceIds);
+        request.setDeviceId(deviceId);
 
         QueryAliasesResponse response = client.getAcsResponse(request);
         System.out.printf("RequestId: %s\n",
@@ -38,8 +38,8 @@ public class AliasTest extends BaseTest {
 
         BindAliasRequest request = new BindAliasRequest();
         request.setAppKey(appKey);
-        request.setDeviceId(deviceIds);
-        request.setAliasName(alias);//别名的长度限制为128Byte,一个设备最多绑定128个别名
+        request.setDeviceId(deviceId);
+        request.setAliasName(alias);
 
         BindAliasResponse response = client.getAcsResponse(request);
         System.out.printf("RequestId: %s\n",
@@ -57,7 +57,7 @@ public class AliasTest extends BaseTest {
 
         UnbindAliasRequest request = new UnbindAliasRequest();
         request.setAppKey(appKey);
-        request.setDeviceId(deviceIds);
+        request.setDeviceId(deviceId);
         request.setAliasName(alias);
 
         UnbindAliasResponse response = client.getAcsResponse(request);

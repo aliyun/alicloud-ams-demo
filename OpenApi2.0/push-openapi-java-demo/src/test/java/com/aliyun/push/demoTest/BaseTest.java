@@ -14,13 +14,17 @@ import static org.junit.Assert.assertNotNull;
  * 推送的OpenAPI文档 https://help.aliyun.com/document_detail/mobilepush/api-reference/openapi.html
  */
 public class BaseTest {
-    private static final String REGION_HANGZHOU = "cn-hangzhou";
 
+    protected static String region;
     protected static long appKey;
     protected static String deviceIds;
+    protected static String deviceId;
     protected static String accounts;
+    protected static String account;
+    protected static String aliases;
     protected static String alias;
     protected static String tag;
+    protected static String tagExpression;
 
     protected static DefaultAcsClient client;
 
@@ -45,13 +49,18 @@ public class BaseTest {
         String key = properties.getProperty("appKey");
         assertNotNull("先在 push.properties 配置文件中配置 appKey", key);
 
+        region = properties.getProperty("regionId");
         appKey = Long.valueOf(key);
         deviceIds = properties.getProperty("deviceIds");
+        deviceId = properties.getProperty("deviceId");
         accounts = properties.getProperty("accounts");
+        account = properties.getProperty("account");
+        aliases = properties.getProperty("aliases");
         alias = properties.getProperty("alias");
         tag = properties.getProperty("tag");
+        tagExpression = properties.getProperty("tagExpression");
 
-        IClientProfile profile = DefaultProfile.getProfile(REGION_HANGZHOU, accessKeyId, accessKeySecret);
+        IClientProfile profile = DefaultProfile.getProfile(region, accessKeyId, accessKeySecret);
         client = new DefaultAcsClient(profile);
     }
 }
