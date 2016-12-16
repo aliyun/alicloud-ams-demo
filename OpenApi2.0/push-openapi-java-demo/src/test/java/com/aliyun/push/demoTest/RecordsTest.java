@@ -3,8 +3,6 @@ package com.aliyun.push.demoTest;
 import com.alibaba.fastjson.JSON;
 import com.aliyuncs.push.model.v20160801.ListPushRecordsRequest;
 import com.aliyuncs.push.model.v20160801.ListPushRecordsResponse;
-import com.aliyuncs.push.model.v20160801.QueryPushDetailRequest;
-import com.aliyuncs.push.model.v20160801.QueryPushDetailResponse;
 import com.aliyuncs.utils.ParameterHelper;
 import org.junit.Test;
 
@@ -37,19 +35,5 @@ public class RecordsTest extends BaseTest {
             System.out.printf("AppName: %s\tPushTime: %s\tMessageId: %d\tPushType: %s\tDeviceType: %s\tTitle: %s\tBody: %s\n",pushMessageInfo.getAppName(),pushMessageInfo.getPushTime(),pushMessageInfo.getMessageId(),
                     pushMessageInfo.getType(),pushMessageInfo.getDeviceType(),pushMessageInfo.getTitle(),pushMessageInfo.getBody());
         }
-    }
-    /**
-     * 查询推送配置详情
-     * 参考文档 ：https://help.aliyun.com/document_detail/48096.html
-     */
-    @Test
-    public void testPushDetail() throws Exception {
-        QueryPushDetailRequest request = new QueryPushDetailRequest();
-        request.setAppKey(appKey);
-        request.setMessageId(503360l);
-
-        QueryPushDetailResponse response = client.getAcsResponse(request);
-
-        System.out.print(JSON.toJSONString(response));
     }
 }
