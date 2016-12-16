@@ -198,37 +198,4 @@ public class PushTest extends BaseTest {
 
     }
 
-    /**
-     * 推送排查接口
-     * */
-    @Test
-    public void testTracePush () throws Exception {
-        TracePushRequest request = new TracePushRequest();
-        request.setAppKey(appKey);
-        request.setMessageId("503360");
-        request.setDeviceId(deviceIds);
-        TracePushResponse response = client.getAcsResponse(request);
-        TracePushResponse.PushBasicInfo basicInfo = response.getPushBasicInfo();
-        TracePushResponse.PushTaskInfo  taskInfo = response.getPushTaskInfo();
-        TracePushResponse.PushDeviceInfo deviceInfo = response.getPushDeviceInfo();
-        System.out.printf("AppId: %d, Title: %s\nPushType: %s, DeviceType: %s\nPushTime: %s, ExpireTime: %s\n",
-                basicInfo.getAppId(),basicInfo.getTitle(),basicInfo.getPushType(),basicInfo.getTargetType(),basicInfo.getPushTime(),basicInfo.getExpireTime());
-        if  (taskInfo != null && taskInfo.getBroadcast() != null){
-            if (taskInfo.getBroadcast()) {
-                System.out.printf("AcceptTime: %s\nAndroidTaskStatus: %s,AndroidTaskErrCode: %s\niOSTaskStatus: %s,iOSTaskErrCode: %s\n"
-                        ,taskInfo.getAcceptTime(),taskInfo.getAndroidTaskStatus(),taskInfo.getAndroidTaskErrCode(),
-                        taskInfo.getiOSTaskStatus(),taskInfo.getAndroidTaskErrCode());
-            } else {
-                System.out.printf("AcceptTime: %s,DeviceSet: %s",taskInfo.getAcceptTime(),taskInfo.getDeviceSet());
-
-            }
-        }
-        if (deviceInfo != null && deviceInfo.getOnline() != null) {
-            System.out.printf("online: %b\nCreateTime: %s,SentTime: %s\nArriveTime: %s,clickTime: %s\nCleanTime: %s\nDeviceStatus: %s,DeviceErrCode: %s\n"
-                    ,deviceInfo.getOnline(),deviceInfo.getCreateTime(),deviceInfo.getSentTime(),deviceInfo.getArriveTime(),
-                    deviceInfo.getClickTime(),deviceInfo.getCleanTime(),deviceInfo.getDeviceStatus(),deviceInfo.getDeviceErrCode());
-        }
-       //
-    }
-
 }

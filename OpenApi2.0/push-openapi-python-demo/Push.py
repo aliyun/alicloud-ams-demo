@@ -27,7 +27,7 @@ request.set_Body("Body from ali push open api2.0 : Push")
 # iOS配置
 
 #iOS应用图标右上角角标
-request.set_iOSBadge("5")
+request.set_iOSBadge(5)
 #iOS通知声音
 request.set_iOSMusic("default")
 #iOS的通知是通过APNs中心来发送的，需要填写对应的环境信息。"DEV" : 表示开发环境 "PRODUCT" : 表示生产环境

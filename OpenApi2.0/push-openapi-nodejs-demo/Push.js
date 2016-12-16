@@ -21,7 +21,7 @@ push.push({
   Body: 'Push Body',
 
   //iOS相关配置
-  iOSBadge: '5',//iOS应用图标右上角角标
+  iOSBadge: 5,//iOS应用图标右上角角标
   iOSMusic: 'default',//iOS通知声音
   iOSApnsEnv: 'PRODUCT',//iOS的通知是通过APNs中心来发送的，需要填写对应的环境信息。"DEV" : 表示开发环境 "PRODUCT" : 表示生产环境
   iOSRemind: true,//消息推送时设备不在线（既与移动推送的服务端的长连接通道不通），则这条推送会做为通知，通过苹果的APNs通道送达一次。注意：离线消息转通知仅适用于生产环境
