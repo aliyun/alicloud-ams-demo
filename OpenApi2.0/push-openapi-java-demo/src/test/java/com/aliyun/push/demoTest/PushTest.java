@@ -33,7 +33,7 @@ public class PushTest extends BaseTest {
         androidRequest.setTitle("66666666666");
         androidRequest.setBody("6");
         PushMessageToAndroidResponse pushMessageToAndroidResponse = client.getAcsResponse(androidRequest);
-        System.out.printf("RequestId: %s, MessageId: %d\n",
+        System.out.printf("RequestId: %s, MessageId: %s\n",
                 pushMessageToAndroidResponse.getRequestId(), pushMessageToAndroidResponse.getMessageId());
 
     }
@@ -144,6 +144,7 @@ public class PushTest extends BaseTest {
 
         // 推送配置: iOS
         pushRequest.setiOSBadge(5); // iOS应用图标右上角角标
+	pushRequest.setiOSSilentNotification(false);//开启静默通知
         pushRequest.setiOSMusic("default"); // iOS通知声音
         pushRequest.setiOSSubtitle("iOS10 subtitle");//iOS10通知副标题的内容
         pushRequest.setiOSNotificationCategory("iOS10 Notification Category");//指定iOS10通知Category

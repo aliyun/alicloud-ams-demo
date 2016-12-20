@@ -7,7 +7,7 @@ use \Push\Request\V20160801 as Push;
 $accessKeyId = "your accessKeyId";
 $accessKeySecret = "your accessKeySecret";
 $appKey = "your appKey";
-$deviceId = 'your deviceId';
+$deviceId = "your deviceId";
 
 $iClientProfile = DefaultProfile::getProfile("cn-hangzhou", $accessKeyId, $accessKeySecret);
 $client = new DefaultAcsClient($iClientProfile);

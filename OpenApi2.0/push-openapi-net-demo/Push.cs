@@ -32,6 +32,8 @@ namespace AlibabaCloud
 	    // 推送配置: iOS
             // iOS应用图标右上角角标
             request.IOSBadge = 50;
+	    //开启静默通知
+            request.IOSSilentNotification = false;
             // iOS通知声音
             request.IOSMusic = "default";
 	    //iOS10通知副标题的内容
