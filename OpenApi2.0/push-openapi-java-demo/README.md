@@ -50,11 +50,11 @@ tag = _YOUR_TAG_LIST_HERE_
 示例代码
 -----------------
 
-- 推送简单的API示例 [PushDemoTest.java](src/test/java/com/aliyun/demo/push/PushDemoTest.java)
-    - 推送 通知/消息 给 `Android`
-    - 推送 通知/消息 给 `iOS`
-- 推送高级API示例 [AdvancedPushDemoTest.java](src/test/java/com/aliyun/demo/push/AdvancedPushDemoTest.java)
-- 设备状态查询示例 [DeviceInfoDemoTest.java](src/test/java/com/aliyun/demo/push/DeviceInfoDemoTest.java)
+- 推送API示例 [PushTest.java](src/test/java/com/aliyun/push/demoTest/PushTest.java)
+- 设备状态查询示例 [DeviceTest.java](src/test/java/com/aliyun/push/demoTest/DeviceTest.java)
+- Tag操作示例 [TagTest.java](src/test/java/com/aliyun/push/demoTest/TagTest.java)
+- alias操作示例 [AliasTest.java](src/test/java/com/aliyun/push/demoTest/AliasTest.java)
+- 统计操作示例 [StatTest.java](src/test/java/com/aliyun/push/demoTest/StatTest.java)
 
 依赖
 -----------------
@@ -63,7 +63,7 @@ tag = _YOUR_TAG_LIST_HERE_
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-push</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.2</version>
 </dependency>
 ```
 
@@ -72,4 +72,4 @@ tag = _YOUR_TAG_LIST_HERE_
 相关资料
 -----------------
 
-- [移动推送的OpenAPI文档](https://help.aliyun.com/document_detail/mobilepush/api-reference/openapi.html)
+- [移动推送的OpenAPI文档](https://help.aliyun.com/document_detail/48038.html?)
