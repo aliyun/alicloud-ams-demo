@@ -57,7 +57,7 @@ accounts = _YOUR_ACCOUNT_LIST_HERE_
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-push</artifactId>
-    <version>2.0.3</version>
+    <version>2.2.4</version>
 </dependency>
 ```
 
@@ -66,4 +66,4 @@ accounts = _YOUR_ACCOUNT_LIST_HERE_
 相关资料
 -----------------
 
-- [移动推送的OpenAPI文档](https://help.aliyun.com/document_detail/mobilepush/api-reference/openapi.html)
+- [移动推送的OpenAPI文档](https://help.aliyun.com/document_detail/30074.html?)
