@@ -44,4 +44,13 @@ public class DeviceTest extends BaseTest {
 
     }
 
+    @Test
+    public void testCheckDevices() throws Exception {
+        CheckDevicesRequest request = new CheckDevicesRequest();
+        request.setAppKey(appKey);
+        request.setDeviceIds(deviceIds);
+        CheckDevicesResponse response = client.getAcsResponse(request);
+        System.out.print(JSON.toJSONString(response)); 
+    }	
+
 }
