@@ -8,7 +8,7 @@ clt = client.AcsClient(properties.accessKeyId,properties.accessKeySecret,propert
 
 request = CheckDeviceRequest.CheckDeviceRequest()
 request.set_AppKey(properties.appKey)
-request.set_DeviceId(properties.deviceIds)
+request.set_DeviceId(properties.deviceId)
 
 result = clt.do_action(request)
 print result
