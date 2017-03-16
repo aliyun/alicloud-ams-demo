@@ -12,20 +12,6 @@ import org.junit.Test;
  * 设备相关接口demo
  */
 public class DeviceTest extends BaseTest {
-
-    /**
-     * 查询设备是否为有效设备
-     * 参考文档：https://help.aliyun.com/document_detail/48300.html
-     * */
-    @Test
-    public void testCheckDevice() throws Exception {
-        CheckDeviceRequest request = new CheckDeviceRequest();
-        request.setAppKey(appKey);
-        request.setDeviceId(deviceIds);
-        CheckDeviceResponse response = client.getAcsResponse(request);
-        System.out.print("Available: " + response.getAvailable());
-    }
-
     /**
      * 查询设备信息
      * 参考文档：https://help.aliyun.com/document_detail/48098.html
@@ -43,5 +29,14 @@ public class DeviceTest extends BaseTest {
         System.out.print(JSON.toJSONString(deviceInfo));
 
     }
+
+    @Test
+    public void testCheckDevices() throws Exception {
+        CheckDevicesRequest request = new CheckDevicesRequest();
+        request.setAppKey(appKey);
+        request.setDeviceIds(deviceIds);
+        CheckDevicesResponse response = client.getAcsResponse(request);
+        System.out.print(JSON.toJSONString(response)); 
+    }	
 
 }
