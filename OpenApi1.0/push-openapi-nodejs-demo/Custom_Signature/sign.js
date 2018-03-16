@@ -13,7 +13,9 @@ sign : function(method, params, accessKeySecret) {
   const stringToSign = method + "&%2F&" + popEscape.popEscape(QueryString);
   return hmac(accessKeySecret + '&', stringToSign, 'base64', 'sha1');
 }
-var hmac = function(key, string, digest, fn) {
+};
+
+function hmac(key, string, digest, fn) {
   if (!digest) {
     digest = 'binary';
   }
@@ -28,4 +30,3 @@ var hmac = function(key, string, digest, fn) {
   }
   return cryptoLib.createHmac(fn, key).update(string).digest(digest);
 }
-};
