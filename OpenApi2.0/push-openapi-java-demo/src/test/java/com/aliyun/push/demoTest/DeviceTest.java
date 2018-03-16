@@ -1,10 +1,7 @@
 package com.aliyun.push.demoTest;
 
 import com.alibaba.fastjson.JSON;
-import com.aliyuncs.push.model.v20160801.CheckDeviceRequest;
-import com.aliyuncs.push.model.v20160801.CheckDeviceResponse;
-import com.aliyuncs.push.model.v20160801.QueryDeviceInfoRequest;
-import com.aliyuncs.push.model.v20160801.QueryDeviceInfoResponse;
+import com.aliyuncs.push.model.v20160801.*;
 import org.junit.Test;
 
 /**
