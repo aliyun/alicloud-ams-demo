@@ -63,7 +63,12 @@ tag = _YOUR_TAG_LIST_HERE_
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-push</artifactId>
-    <version>3.0.2</version>
+    <version>3.10.0</version>
+</dependency>
+<dependency>
+    <groupId>com.aliyun</groupId>
+    <artifactId>aliyun-java-sdk-core</artifactId>
+    <version>3.2.8</version>
 </dependency>
 ```
 
